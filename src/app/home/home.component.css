@@ -1,0 +1,12 @@
+.welcomeboard {
+    height: 20%;
+}
+
+.mainboard {
+    height: 60%;
+}
+
+.footer {
+    height: 20%;
+    background-color: gray;
+}

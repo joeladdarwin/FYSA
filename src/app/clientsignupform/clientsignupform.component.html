@@ -1,0 +1,58 @@
+<mat-horizontal-stepper [linear]="isLinear">
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field hintLabel="Max 10 characters">
+                <input matInput #input maxlen-gth="10" placeholder="First Name" formControlName="firstCtrl" required>
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            <mat-form-field hintLabel="Max 10 characters">
+                <input matInput #input maxlength="10" placeholder="Last Name" formControlName="firstCtrl" required>
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Contact Information</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field hintLabel="Max 10 characters">
+                <input matInput #input type="tel" maxlength="10" placeholder="Phone number" formControlName="secondCtrl" required>
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Personal Information</ng-template>
+            <mat-form-field class="example-full-width">
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of Birth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Submit</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

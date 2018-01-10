@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 welcomeboard">
+            <h1 class="text-center">
+                Welcome to FYSA
+            </h1>
+        </div>
+    </div>
+    <div class="row mainboard">
+        <div class="col-md-5">
+
+            <app-carousel></app-carousel>
+
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class=" col-md-4">
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#client">Client</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#coach">Coach</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active container" id="client">
+                    <app-clientlogin></app-clientlogin>
+                </div>
+                <div class="tab-pane container" id="coach">
+                    <app-coachlogin></app-coachlogin>
+                </div>
+                <div class="tab-pane container" id="menu2">...</div>
+            </div>
+        </div>
+
+    </div>
+</div>

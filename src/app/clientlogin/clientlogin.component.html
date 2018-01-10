@@ -1,0 +1,13 @@
+<form class="example-form bg-inverse">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <button mat-button class="btn-block btn-primary" routerLink="/client/dashboard">Click me!</button>
+    <p>Not a member? <a routerLink="/client/signupform">Sign Up</a></p>
+    <p>Forgot Password? <a routerLink="/client/passwordreset">Reset</a></p>
+</form>
